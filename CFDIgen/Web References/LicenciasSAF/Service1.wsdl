@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PermLicencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="noSerie" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumHD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PermLicenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PermLicenciaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="compruebaTimbresRestantes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RFC_Emisor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="compruebaTimbresRestantesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="compruebaTimbresRestantesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneSysInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RFC_Emisor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneSysInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneSysInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaSysInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RFC_Emisor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaSysInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizaSysInfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StatusFolios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RFC_Emisor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StatusFoliosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StatusFoliosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TablaPrecios">
+        <s:complexType />
+      </s:element>
+      <s:element name="TablaPreciosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TablaPreciosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SolicitarFolios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CantidadFolios" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Licencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RFC" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Gratuitos" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SolicitarFoliosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SolicitarFoliosResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneFecha">
+        <s:complexType />
+      </s:element>
+      <s:element name="obtieneFechaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="obtieneFechaResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermLicenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:PermLicencia" />
+  </wsdl:message>
+  <wsdl:message name="PermLicenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:PermLicenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="compruebaTimbresRestantesSoapIn">
+    <wsdl:part name="parameters" element="tns:compruebaTimbresRestantes" />
+  </wsdl:message>
+  <wsdl:message name="compruebaTimbresRestantesSoapOut">
+    <wsdl:part name="parameters" element="tns:compruebaTimbresRestantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneSysInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneSysInfo" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneSysInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneSysInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaSysInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizaSysInfo" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaSysInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizaSysInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="StatusFoliosSoapIn">
+    <wsdl:part name="parameters" element="tns:StatusFolios" />
+  </wsdl:message>
+  <wsdl:message name="StatusFoliosSoapOut">
+    <wsdl:part name="parameters" element="tns:StatusFoliosResponse" />
+  </wsdl:message>
+  <wsdl:message name="TablaPreciosSoapIn">
+    <wsdl:part name="parameters" element="tns:TablaPrecios" />
+  </wsdl:message>
+  <wsdl:message name="TablaPreciosSoapOut">
+    <wsdl:part name="parameters" element="tns:TablaPreciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarFoliosSoapIn">
+    <wsdl:part name="parameters" element="tns:SolicitarFolios" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarFoliosSoapOut">
+    <wsdl:part name="parameters" element="tns:SolicitarFoliosResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneFechaSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneFecha" />
+  </wsdl:message>
+  <wsdl:message name="obtieneFechaSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneFechaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PermLicencia">
+      <wsdl:input message="tns:PermLicenciaSoapIn" />
+      <wsdl:output message="tns:PermLicenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="compruebaTimbresRestantes">
+      <wsdl:input message="tns:compruebaTimbresRestantesSoapIn" />
+      <wsdl:output message="tns:compruebaTimbresRestantesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneSysInfo">
+      <wsdl:input message="tns:ObtieneSysInfoSoapIn" />
+      <wsdl:output message="tns:ObtieneSysInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaSysInfo">
+      <wsdl:input message="tns:ActualizaSysInfoSoapIn" />
+      <wsdl:output message="tns:ActualizaSysInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StatusFolios">
+      <wsdl:input message="tns:StatusFoliosSoapIn" />
+      <wsdl:output message="tns:StatusFoliosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TablaPrecios">
+      <wsdl:input message="tns:TablaPreciosSoapIn" />
+      <wsdl:output message="tns:TablaPreciosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarFolios">
+      <wsdl:input message="tns:SolicitarFoliosSoapIn" />
+      <wsdl:output message="tns:SolicitarFoliosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneFecha">
+      <wsdl:input message="tns:obtieneFechaSoapIn" />
+      <wsdl:output message="tns:obtieneFechaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PermLicencia">
+      <soap:operation soapAction="http://tempuri.org/PermLicencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="compruebaTimbresRestantes">
+      <soap:operation soapAction="http://tempuri.org/compruebaTimbresRestantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneSysInfo">
+      <soap:operation soapAction="http://tempuri.org/ObtieneSysInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaSysInfo">
+      <soap:operation soapAction="http://tempuri.org/ActualizaSysInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusFolios">
+      <soap:operation soapAction="http://tempuri.org/StatusFolios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TablaPrecios">
+      <soap:operation soapAction="http://tempuri.org/TablaPrecios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarFolios">
+      <soap:operation soapAction="http://tempuri.org/SolicitarFolios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneFecha">
+      <soap:operation soapAction="http://tempuri.org/obtieneFecha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PermLicencia">
+      <soap12:operation soapAction="http://tempuri.org/PermLicencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="compruebaTimbresRestantes">
+      <soap12:operation soapAction="http://tempuri.org/compruebaTimbresRestantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneSysInfo">
+      <soap12:operation soapAction="http://tempuri.org/ObtieneSysInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaSysInfo">
+      <soap12:operation soapAction="http://tempuri.org/ActualizaSysInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusFolios">
+      <soap12:operation soapAction="http://tempuri.org/StatusFolios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TablaPrecios">
+      <soap12:operation soapAction="http://tempuri.org/TablaPrecios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarFolios">
+      <soap12:operation soapAction="http://tempuri.org/SolicitarFolios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneFecha">
+      <soap12:operation soapAction="http://tempuri.org/obtieneFecha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://66.226.75.13/Licencias/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://66.226.75.13/Licencias/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

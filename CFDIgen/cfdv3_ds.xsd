@@ -1,0 +1,373 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" targetNamespace="http://www.sat.gob.mx/cfd/3" xmlns:mstns="http://www.sat.gob.mx/cfd/3" xmlns="http://www.sat.gob.mx/cfd/3" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:complexType name="t_InformacionAduanera">
+    <xs:attribute name="numero" form="unqualified" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="fecha" form="unqualified" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:date" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="aduana" form="unqualified" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:element name="InformacionAduanera" type="mstns:t_InformacionAduanera" />
+  <xs:simpleType name="t_Importe">
+    <xs:restriction base="xs:decimal" />
+  </xs:simpleType>
+  <xs:simpleType name="t_RFC">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="13" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="t_UbicacionFiscal">
+    <xs:attribute name="calle" form="unqualified" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="noExterior" form="unqualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="noInterior" form="unqualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="colonia" form="unqualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="localidad" form="unqualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="referencia" form="unqualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="municipio" form="unqualified" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="estado" form="unqualified" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="pais" form="unqualified" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="codigoPostal" form="unqualified" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="5" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="t_Ubicacion">
+    <xs:attribute name="calle" form="unqualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="noExterior" form="unqualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="noInterior" form="unqualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="colonia" form="unqualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="localidad" form="unqualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="referencia" form="unqualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="municipio" form="unqualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="estado" form="unqualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="pais" form="unqualified" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="codigoPostal" form="unqualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:element name="Comprobante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Emisor" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DomicilioFiscal" type="mstns:t_UbicacionFiscal" minOccurs="0" maxOccurs="unbounded" />
+              <xs:element name="ExpedidoEn" type="mstns:t_Ubicacion" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="rfc" form="unqualified" type="mstns:t_RFC" use="required" />
+            <xs:attribute name="nombre" form="unqualified" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string" />
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Receptor" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Domicilio" type="mstns:t_Ubicacion" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="rfc" form="unqualified" type="mstns:t_RFC" use="required" />
+            <xs:attribute name="nombre" form="unqualified">
+              <xs:simpleType>
+                <xs:restriction base="xs:string" />
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Conceptos" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Concepto" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="InformacionAduanera" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:element name="CuentaPredial" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="numero" form="unqualified" use="required">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string" />
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ComplementoConcepto" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Parte" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="InformacionAduanera" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                        <xs:attribute name="cantidad" form="unqualified" use="required">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:decimal" />
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="unidad" form="unqualified">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string" />
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="noIdentificacion" form="unqualified">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string" />
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="descripcion" form="unqualified" use="required">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string" />
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="valorUnitario" form="unqualified" type="mstns:t_Importe" />
+                        <xs:attribute name="importe" form="unqualified" type="mstns:t_Importe" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="cantidad" form="unqualified" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:decimal" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="unidad" form="unqualified">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="noIdentificacion" form="unqualified">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="descripcion" form="unqualified" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string" />
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="valorUnitario" form="unqualified" type="mstns:t_Importe" use="required" />
+                  <xs:attribute name="importe" form="unqualified" type="mstns:t_Importe" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Impuestos" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Retenciones" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Retencion" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="impuesto" form="unqualified" use="required">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string" />
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="importe" form="unqualified" type="mstns:t_Importe" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Traslados" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Traslado" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="impuesto" form="unqualified" use="required">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string" />
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="tasa" form="unqualified" type="mstns:t_Importe" use="required" />
+                        <xs:attribute name="importe" form="unqualified" type="mstns:t_Importe" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="totalImpuestosRetenidos" form="unqualified" type="mstns:t_Importe" />
+            <xs:attribute name="totalImpuestosTrasladados" form="unqualified" type="mstns:t_Importe" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Complemento" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Addenda" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" form="unqualified" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="serie" form="unqualified">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="25" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="folio" form="unqualified">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="fecha" form="unqualified" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime" />
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="sello" form="unqualified" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="formaDePago" form="unqualified" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="noCertificado" form="unqualified" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="certificado" form="unqualified" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="condicionesDePago" form="unqualified">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="subTotal" form="unqualified" type="mstns:t_Importe" use="required" />
+      <xs:attribute name="descuento" form="unqualified" type="mstns:t_Importe" />
+      <xs:attribute name="motivoDescuento" form="unqualified">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="TipoCambio" form="unqualified" type="xs:string" />
+      <xs:attribute name="Moneda" form="unqualified" type="xs:string" />
+      <xs:attribute name="total" form="unqualified" type="mstns:t_Importe" use="required" />
+      <xs:attribute name="metodoDePago" form="unqualified">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="tipoDeComprobante" form="unqualified" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="InformacionAduanera" />
+        <xs:element ref="Comprobante" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

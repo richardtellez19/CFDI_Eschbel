@@ -1,0 +1,392 @@
+﻿<xs:schema id="ds_cfdv3" targetNamespace="http://tempuri.org/ds_cfdv3.xsd" xmlns:mstns="http://tempuri.org/ds_cfdv3.xsd" xmlns="http://tempuri.org/ds_cfdv3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified" msdata:schemafragmentcount="2">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_cfdv3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds_cfdv3" msprop:Generator_UserDSName="ds_cfdv3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="InformacionAduanera" msprop:Generator_UserTableName="InformacionAduanera" msprop:Generator_RowEvArgName="InformacionAduaneraRowChangeEvent" msprop:Generator_TableVarName="tableInformacionAduanera" msprop:Generator_TablePropName="InformacionAduanera" msprop:Generator_RowDeletingName="InformacionAduaneraRowDeleting" msprop:Generator_RowChangingName="InformacionAduaneraRowChanging" msprop:Generator_RowDeletedName="InformacionAduaneraRowDeleted" msprop:Generator_RowEvHandlerName="InformacionAduaneraRowChangeEventHandler" msprop:Generator_TableClassName="InformacionAduaneraDataTable" msprop:Generator_RowChangedName="InformacionAduaneraRowChanged" msprop:Generator_RowClassName="InformacionAduaneraRow">
+          <xs:complexType>
+            <xs:attribute name="numero" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnnumero" msprop:Generator_ColumnPropNameInRow="numero" msprop:Generator_ColumnPropNameInTable="numeroColumn" msprop:Generator_UserColumnName="numero" type="xs:string" use="required" />
+            <xs:attribute name="fecha" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" use="required" />
+            <xs:attribute name="aduana" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnaduana" msprop:Generator_ColumnPropNameInRow="aduana" msprop:Generator_ColumnPropNameInTable="aduanaColumn" msprop:Generator_UserColumnName="aduana" type="xs:string" use="required" />
+            <xs:attribute name="Parte_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnParte_Id" msprop:Generator_ColumnPropNameInRow="Parte_Id" msprop:Generator_ColumnPropNameInTable="Parte_IdColumn" msprop:Generator_UserColumnName="Parte_Id" type="xs:int" />
+            <xs:attribute name="Concepto_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnConcepto_Id" msprop:Generator_ColumnPropNameInRow="Concepto_Id" msprop:Generator_ColumnPropNameInTable="Concepto_IdColumn" msprop:Generator_UserColumnName="Concepto_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Comprobante" msprop:Generator_UserTableName="Comprobante" msprop:Generator_RowEvArgName="ComprobanteRowChangeEvent" msprop:Generator_TableVarName="tableComprobante" msprop:Generator_TablePropName="Comprobante" msprop:Generator_RowDeletingName="ComprobanteRowDeleting" msprop:Generator_RowChangingName="ComprobanteRowChanging" msprop:Generator_RowDeletedName="ComprobanteRowDeleted" msprop:Generator_RowEvHandlerName="ComprobanteRowChangeEventHandler" msprop:Generator_TableClassName="ComprobanteDataTable" msprop:Generator_RowChangedName="ComprobanteRowChanged" msprop:Generator_RowClassName="ComprobanteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NumCtaPago" msprop:Generator_ColumnVarNameInTable="columnNumCtaPago" msprop:Generator_ColumnPropNameInRow="NumCtaPago" msprop:Generator_ColumnPropNameInTable="NumCtaPagoColumn" msprop:Generator_UserColumnName="NumCtaPago" type="xs:string" minOccurs="0" msdata:Ordinal="18" />
+              <xs:element name="LugarExpedicion" msprop:Generator_ColumnVarNameInTable="columnLugarExpedicion" msprop:Generator_ColumnPropNameInRow="LugarExpedicion" msprop:Generator_ColumnPropNameInTable="LugarExpedicionColumn" msprop:Generator_UserColumnName="LugarExpedicion" type="xs:string" minOccurs="0" msdata:Ordinal="19" />
+            </xs:sequence>
+            <xs:attribute name="version" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnversion" msprop:Generator_ColumnPropNameInRow="version" msprop:Generator_ColumnPropNameInTable="versionColumn" msprop:Generator_UserColumnName="version" type="xs:string" use="required" />
+            <xs:attribute name="serie" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnserie" msprop:Generator_ColumnPropNameInRow="serie" msprop:Generator_ColumnPropNameInTable="serieColumn" msprop:Generator_UserColumnName="serie">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="25" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="folio" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnfolio" msprop:Generator_ColumnPropNameInRow="folio" msprop:Generator_ColumnPropNameInTable="folioColumn" msprop:Generator_UserColumnName="folio">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="20" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="fecha" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" use="required" />
+            <xs:attribute name="sello" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnsello" msprop:Generator_ColumnPropNameInRow="sello" msprop:Generator_ColumnPropNameInTable="selloColumn" msprop:Generator_UserColumnName="sello" type="xs:string" use="required" />
+            <xs:attribute name="FormaPago" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnFormaPago" msprop:Generator_ColumnPropNameInRow="FormaPago" msprop:Generator_ColumnPropNameInTable="FormaPagoColumn" msprop:Generator_UserColumnName="FormaPago" type="xs:string" use="required" />
+            <xs:attribute name="noCertificado" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnnoCertificado" msprop:Generator_ColumnPropNameInRow="noCertificado" msprop:Generator_ColumnPropNameInTable="noCertificadoColumn" msprop:Generator_UserColumnName="noCertificado" type="xs:string" use="required" />
+            <xs:attribute name="certificado" form="unqualified" msprop:Generator_ColumnVarNameInTable="columncertificado" msprop:Generator_ColumnPropNameInRow="certificado" msprop:Generator_ColumnPropNameInTable="certificadoColumn" msprop:Generator_UserColumnName="certificado" type="xs:string" use="required" />
+            <xs:attribute name="condicionesDePago" form="unqualified" msprop:Generator_ColumnVarNameInTable="columncondicionesDePago" msprop:Generator_ColumnPropNameInRow="condicionesDePago" msprop:Generator_ColumnPropNameInTable="condicionesDePagoColumn" msprop:Generator_UserColumnName="condicionesDePago" type="xs:string" />
+            <xs:attribute name="subTotal" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnsubTotal" msprop:Generator_ColumnPropNameInRow="subTotal" msprop:Generator_ColumnPropNameInTable="subTotalColumn" msprop:Generator_UserColumnName="subTotal" type="xs:decimal" use="required" />
+            <xs:attribute name="descuento" form="unqualified" msprop:Generator_ColumnVarNameInTable="columndescuento" msprop:Generator_ColumnPropNameInRow="descuento" msprop:Generator_ColumnPropNameInTable="descuentoColumn" msprop:Generator_UserColumnName="descuento" type="xs:decimal" />
+            <xs:attribute name="motivoDescuento" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnmotivoDescuento" msprop:Generator_ColumnPropNameInRow="motivoDescuento" msprop:Generator_ColumnPropNameInTable="motivoDescuentoColumn" msprop:Generator_UserColumnName="motivoDescuento" type="xs:string" />
+            <xs:attribute name="TipoCambio" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnTipoCambio" msprop:Generator_ColumnPropNameInRow="TipoCambio" msprop:Generator_ColumnPropNameInTable="TipoCambioColumn" msprop:Generator_UserColumnName="TipoCambio" type="xs:string" />
+            <xs:attribute name="Moneda" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnMoneda" msprop:Generator_ColumnPropNameInRow="Moneda" msprop:Generator_ColumnPropNameInTable="MonedaColumn" msprop:Generator_UserColumnName="Moneda" type="xs:string" />
+            <xs:attribute name="total" form="unqualified" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:decimal" use="required" />
+            <xs:attribute name="MetodoPago" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnMetodoPago" msprop:Generator_ColumnPropNameInRow="MetodoPago" msprop:Generator_ColumnPropNameInTable="MetodoPagoColumn" msprop:Generator_UserColumnName="MetodoPago" type="xs:string" />
+            <xs:attribute name="tipoDeComprobante" form="unqualified" msprop:Generator_ColumnVarNameInTable="columntipoDeComprobante" msprop:Generator_ColumnPropNameInRow="tipoDeComprobante" msprop:Generator_ColumnPropNameInTable="tipoDeComprobanteColumn" msprop:Generator_UserColumnName="tipoDeComprobante" type="xs:string" use="required" />
+            <xs:attribute name="Comprobante_Id" form="unqualified" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnComprobante_Id" msprop:Generator_ColumnPropNameInRow="Comprobante_Id" msprop:Generator_ColumnPropNameInTable="Comprobante_IdColumn" msprop:Generator_UserColumnName="Comprobante_Id" type="xs:int" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Emisor" msprop:Generator_UserTableName="Emisor" msprop:Generator_RowEvArgName="EmisorRowChangeEvent" msprop:Generator_TableVarName="tableEmisor" msprop:Generator_TablePropName="Emisor" msprop:Generator_RowDeletingName="EmisorRowDeleting" msprop:Generator_RowChangingName="EmisorRowChanging" msprop:Generator_RowDeletedName="EmisorRowDeleted" msprop:Generator_RowEvHandlerName="EmisorRowChangeEventHandler" msprop:Generator_TableClassName="EmisorDataTable" msprop:Generator_RowChangedName="EmisorRowChanged" msprop:Generator_RowClassName="EmisorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RegimenFiscal" msprop:Generator_ColumnVarNameInTable="columnRegimenFiscal" msprop:Generator_ColumnPropNameInRow="RegimenFiscal" msprop:Generator_ColumnPropNameInTable="RegimenFiscalColumn" msprop:Generator_UserColumnName="RegimenFiscal" type="xs:string" minOccurs="0" msdata:Ordinal="4" />
+            </xs:sequence>
+            <xs:attribute name="rfc" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnrfc" msprop:Generator_ColumnPropNameInRow="rfc" msprop:Generator_ColumnPropNameInTable="rfcColumn" msprop:Generator_UserColumnName="rfc" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="13" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="nombre" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" use="required" />
+            <xs:attribute name="Emisor_Id" form="unqualified" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnEmisor_Id" msprop:Generator_ColumnPropNameInRow="Emisor_Id" msprop:Generator_ColumnPropNameInTable="Emisor_IdColumn" msprop:Generator_UserColumnName="Emisor_Id" type="xs:int" use="required" />
+            <xs:attribute name="Comprobante_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnComprobante_Id" msprop:Generator_ColumnPropNameInRow="Comprobante_Id" msprop:Generator_ColumnPropNameInTable="Comprobante_IdColumn" msprop:Generator_UserColumnName="Comprobante_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DomicilioFiscal" msprop:Generator_UserTableName="DomicilioFiscal" msprop:Generator_RowEvArgName="DomicilioFiscalRowChangeEvent" msprop:Generator_TableVarName="tableDomicilioFiscal" msprop:Generator_TablePropName="DomicilioFiscal" msprop:Generator_RowDeletingName="DomicilioFiscalRowDeleting" msprop:Generator_RowChangingName="DomicilioFiscalRowChanging" msprop:Generator_RowDeletedName="DomicilioFiscalRowDeleted" msprop:Generator_RowEvHandlerName="DomicilioFiscalRowChangeEventHandler" msprop:Generator_TableClassName="DomicilioFiscalDataTable" msprop:Generator_RowChangedName="DomicilioFiscalRowChanged" msprop:Generator_RowClassName="DomicilioFiscalRow">
+          <xs:complexType>
+            <xs:attribute name="calle" form="unqualified" msprop:Generator_ColumnVarNameInTable="columncalle" msprop:Generator_ColumnPropNameInRow="calle" msprop:Generator_ColumnPropNameInTable="calleColumn" msprop:Generator_UserColumnName="calle" type="xs:string" use="required" />
+            <xs:attribute name="noExterior" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnnoExterior" msprop:Generator_ColumnPropNameInRow="noExterior" msprop:Generator_ColumnPropNameInTable="noExteriorColumn" msprop:Generator_UserColumnName="noExterior" type="xs:string" />
+            <xs:attribute name="noInterior" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnnoInterior" msprop:Generator_ColumnPropNameInRow="noInterior" msprop:Generator_ColumnPropNameInTable="noInteriorColumn" msprop:Generator_UserColumnName="noInterior" type="xs:string" />
+            <xs:attribute name="colonia" form="unqualified" msprop:Generator_ColumnVarNameInTable="columncolonia" msprop:Generator_ColumnPropNameInRow="colonia" msprop:Generator_ColumnPropNameInTable="coloniaColumn" msprop:Generator_UserColumnName="colonia" type="xs:string" />
+            <xs:attribute name="localidad" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnlocalidad" msprop:Generator_ColumnPropNameInRow="localidad" msprop:Generator_ColumnPropNameInTable="localidadColumn" msprop:Generator_UserColumnName="localidad" type="xs:string" />
+            <xs:attribute name="referencia" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnreferencia" msprop:Generator_ColumnPropNameInRow="referencia" msprop:Generator_ColumnPropNameInTable="referenciaColumn" msprop:Generator_UserColumnName="referencia" type="xs:string" />
+            <xs:attribute name="municipio" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnmunicipio" msprop:Generator_ColumnPropNameInRow="municipio" msprop:Generator_ColumnPropNameInTable="municipioColumn" msprop:Generator_UserColumnName="municipio" type="xs:string" use="required" />
+            <xs:attribute name="estado" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:string" use="required" />
+            <xs:attribute name="pais" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnpais" msprop:Generator_ColumnPropNameInRow="pais" msprop:Generator_ColumnPropNameInTable="paisColumn" msprop:Generator_UserColumnName="pais" type="xs:string" use="required" />
+            <xs:attribute name="codigoPostal" form="unqualified" msprop:Generator_ColumnVarNameInTable="columncodigoPostal" msprop:Generator_ColumnPropNameInRow="codigoPostal" msprop:Generator_ColumnPropNameInTable="codigoPostalColumn" msprop:Generator_UserColumnName="codigoPostal" type="xs:string" use="required" />
+            <xs:attribute name="Emisor_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnEmisor_Id" msprop:Generator_ColumnPropNameInRow="Emisor_Id" msprop:Generator_ColumnPropNameInTable="Emisor_IdColumn" msprop:Generator_UserColumnName="Emisor_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ExpedidoEn" msprop:Generator_UserTableName="ExpedidoEn" msprop:Generator_RowEvArgName="ExpedidoEnRowChangeEvent" msprop:Generator_TableVarName="tableExpedidoEn" msprop:Generator_TablePropName="ExpedidoEn" msprop:Generator_RowDeletingName="ExpedidoEnRowDeleting" msprop:Generator_RowChangingName="ExpedidoEnRowChanging" msprop:Generator_RowDeletedName="ExpedidoEnRowDeleted" msprop:Generator_RowEvHandlerName="ExpedidoEnRowChangeEventHandler" msprop:Generator_TableClassName="ExpedidoEnDataTable" msprop:Generator_RowChangedName="ExpedidoEnRowChanged" msprop:Generator_RowClassName="ExpedidoEnRow">
+          <xs:complexType>
+            <xs:attribute name="calle" form="unqualified" msprop:Generator_ColumnVarNameInTable="columncalle" msprop:Generator_ColumnPropNameInRow="calle" msprop:Generator_ColumnPropNameInTable="calleColumn" msprop:Generator_UserColumnName="calle" type="xs:string" />
+            <xs:attribute name="noExterior" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnnoExterior" msprop:Generator_ColumnPropNameInRow="noExterior" msprop:Generator_ColumnPropNameInTable="noExteriorColumn" msprop:Generator_UserColumnName="noExterior" type="xs:string" />
+            <xs:attribute name="noInterior" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnnoInterior" msprop:Generator_ColumnPropNameInRow="noInterior" msprop:Generator_ColumnPropNameInTable="noInteriorColumn" msprop:Generator_UserColumnName="noInterior" type="xs:string" />
+            <xs:attribute name="colonia" form="unqualified" msprop:Generator_ColumnVarNameInTable="columncolonia" msprop:Generator_ColumnPropNameInRow="colonia" msprop:Generator_ColumnPropNameInTable="coloniaColumn" msprop:Generator_UserColumnName="colonia" type="xs:string" />
+            <xs:attribute name="localidad" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnlocalidad" msprop:Generator_ColumnPropNameInRow="localidad" msprop:Generator_ColumnPropNameInTable="localidadColumn" msprop:Generator_UserColumnName="localidad" type="xs:string" />
+            <xs:attribute name="referencia" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnreferencia" msprop:Generator_ColumnPropNameInRow="referencia" msprop:Generator_ColumnPropNameInTable="referenciaColumn" msprop:Generator_UserColumnName="referencia" type="xs:string" />
+            <xs:attribute name="municipio" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnmunicipio" msprop:Generator_ColumnPropNameInRow="municipio" msprop:Generator_ColumnPropNameInTable="municipioColumn" msprop:Generator_UserColumnName="municipio" type="xs:string" />
+            <xs:attribute name="estado" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:string" />
+            <xs:attribute name="pais" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnpais" msprop:Generator_ColumnPropNameInRow="pais" msprop:Generator_ColumnPropNameInTable="paisColumn" msprop:Generator_UserColumnName="pais" type="xs:string" use="required" />
+            <xs:attribute name="codigoPostal" form="unqualified" msprop:Generator_ColumnVarNameInTable="columncodigoPostal" msprop:Generator_ColumnPropNameInRow="codigoPostal" msprop:Generator_ColumnPropNameInTable="codigoPostalColumn" msprop:Generator_UserColumnName="codigoPostal" type="xs:string" />
+            <xs:attribute name="Emisor_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnEmisor_Id" msprop:Generator_ColumnPropNameInRow="Emisor_Id" msprop:Generator_ColumnPropNameInTable="Emisor_IdColumn" msprop:Generator_UserColumnName="Emisor_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Receptor" msprop:Generator_UserTableName="Receptor" msprop:Generator_RowEvArgName="ReceptorRowChangeEvent" msprop:Generator_TableVarName="tableReceptor" msprop:Generator_TablePropName="Receptor" msprop:Generator_RowDeletingName="ReceptorRowDeleting" msprop:Generator_RowChangingName="ReceptorRowChanging" msprop:Generator_RowDeletedName="ReceptorRowDeleted" msprop:Generator_RowEvHandlerName="ReceptorRowChangeEventHandler" msprop:Generator_TableClassName="ReceptorDataTable" msprop:Generator_RowChangedName="ReceptorRowChanged" msprop:Generator_RowClassName="ReceptorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UsoCFDI" msprop:Generator_ColumnVarNameInTable="columnUsoCFDI" msprop:Generator_ColumnPropNameInRow="UsoCFDI" msprop:Generator_ColumnPropNameInTable="UsoCFDIColumn" msprop:Generator_UserColumnName="UsoCFDI" type="xs:string" minOccurs="0" msdata:Ordinal="4" />
+            </xs:sequence>
+            <xs:attribute name="rfc" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnrfc" msprop:Generator_ColumnPropNameInRow="rfc" msprop:Generator_ColumnPropNameInTable="rfcColumn" msprop:Generator_UserColumnName="rfc" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="13" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="nombre" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" />
+            <xs:attribute name="Receptor_Id" form="unqualified" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnReceptor_Id" msprop:Generator_ColumnPropNameInRow="Receptor_Id" msprop:Generator_ColumnPropNameInTable="Receptor_IdColumn" msprop:Generator_UserColumnName="Receptor_Id" type="xs:int" use="required" />
+            <xs:attribute name="Comprobante_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnComprobante_Id" msprop:Generator_ColumnPropNameInRow="Comprobante_Id" msprop:Generator_ColumnPropNameInTable="Comprobante_IdColumn" msprop:Generator_UserColumnName="Comprobante_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Domicilio" msprop:Generator_UserTableName="Domicilio" msprop:Generator_RowEvArgName="DomicilioRowChangeEvent" msprop:Generator_TableVarName="tableDomicilio" msprop:Generator_TablePropName="Domicilio" msprop:Generator_RowDeletingName="DomicilioRowDeleting" msprop:Generator_RowChangingName="DomicilioRowChanging" msprop:Generator_RowDeletedName="DomicilioRowDeleted" msprop:Generator_RowEvHandlerName="DomicilioRowChangeEventHandler" msprop:Generator_TableClassName="DomicilioDataTable" msprop:Generator_RowChangedName="DomicilioRowChanged" msprop:Generator_RowClassName="DomicilioRow">
+          <xs:complexType>
+            <xs:attribute name="calle" form="unqualified" msprop:Generator_ColumnVarNameInTable="columncalle" msprop:Generator_ColumnPropNameInRow="calle" msprop:Generator_ColumnPropNameInTable="calleColumn" msprop:Generator_UserColumnName="calle" type="xs:string" />
+            <xs:attribute name="noExterior" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnnoExterior" msprop:Generator_ColumnPropNameInRow="noExterior" msprop:Generator_ColumnPropNameInTable="noExteriorColumn" msprop:Generator_UserColumnName="noExterior" type="xs:string" />
+            <xs:attribute name="noInterior" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnnoInterior" msprop:Generator_ColumnPropNameInRow="noInterior" msprop:Generator_ColumnPropNameInTable="noInteriorColumn" msprop:Generator_UserColumnName="noInterior" type="xs:string" />
+            <xs:attribute name="colonia" form="unqualified" msprop:Generator_ColumnVarNameInTable="columncolonia" msprop:Generator_ColumnPropNameInRow="colonia" msprop:Generator_ColumnPropNameInTable="coloniaColumn" msprop:Generator_UserColumnName="colonia" type="xs:string" />
+            <xs:attribute name="localidad" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnlocalidad" msprop:Generator_ColumnPropNameInRow="localidad" msprop:Generator_ColumnPropNameInTable="localidadColumn" msprop:Generator_UserColumnName="localidad" type="xs:string" />
+            <xs:attribute name="referencia" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnreferencia" msprop:Generator_ColumnPropNameInRow="referencia" msprop:Generator_ColumnPropNameInTable="referenciaColumn" msprop:Generator_UserColumnName="referencia" type="xs:string" />
+            <xs:attribute name="municipio" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnmunicipio" msprop:Generator_ColumnPropNameInRow="municipio" msprop:Generator_ColumnPropNameInTable="municipioColumn" msprop:Generator_UserColumnName="municipio" type="xs:string" />
+            <xs:attribute name="estado" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:string" />
+            <xs:attribute name="pais" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnpais" msprop:Generator_ColumnPropNameInRow="pais" msprop:Generator_ColumnPropNameInTable="paisColumn" msprop:Generator_UserColumnName="pais" type="xs:string" use="required" />
+            <xs:attribute name="codigoPostal" form="unqualified" msprop:Generator_ColumnVarNameInTable="columncodigoPostal" msprop:Generator_ColumnPropNameInRow="codigoPostal" msprop:Generator_ColumnPropNameInTable="codigoPostalColumn" msprop:Generator_UserColumnName="codigoPostal" type="xs:string" />
+            <xs:attribute name="Receptor_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnReceptor_Id" msprop:Generator_ColumnPropNameInRow="Receptor_Id" msprop:Generator_ColumnPropNameInTable="Receptor_IdColumn" msprop:Generator_UserColumnName="Receptor_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Conceptos" msprop:Generator_UserTableName="Conceptos" msprop:Generator_RowEvArgName="ConceptosRowChangeEvent" msprop:Generator_TableVarName="tableConceptos" msprop:Generator_TablePropName="Conceptos" msprop:Generator_RowDeletingName="ConceptosRowDeleting" msprop:Generator_RowChangingName="ConceptosRowChanging" msprop:Generator_RowDeletedName="ConceptosRowDeleted" msprop:Generator_RowEvHandlerName="ConceptosRowChangeEventHandler" msprop:Generator_TableClassName="ConceptosDataTable" msprop:Generator_RowChangedName="ConceptosRowChanged" msprop:Generator_RowClassName="ConceptosRow">
+          <xs:complexType>
+            <xs:attribute name="Conceptos_Id" form="unqualified" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnConceptos_Id" msprop:Generator_ColumnPropNameInRow="Conceptos_Id" msprop:Generator_ColumnPropNameInTable="Conceptos_IdColumn" msprop:Generator_UserColumnName="Conceptos_Id" type="xs:int" use="required" />
+            <xs:attribute name="Comprobante_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnComprobante_Id" msprop:Generator_ColumnPropNameInRow="Comprobante_Id" msprop:Generator_ColumnPropNameInTable="Comprobante_IdColumn" msprop:Generator_UserColumnName="Comprobante_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Concepto" msprop:Generator_UserTableName="Concepto" msprop:Generator_RowEvArgName="ConceptoRowChangeEvent" msprop:Generator_TableVarName="tableConcepto" msprop:Generator_TablePropName="Concepto" msprop:Generator_RowDeletingName="ConceptoRowDeleting" msprop:Generator_RowChangingName="ConceptoRowChanging" msprop:Generator_RowDeletedName="ConceptoRowDeleted" msprop:Generator_RowEvHandlerName="ConceptoRowChangeEventHandler" msprop:Generator_TableClassName="ConceptoDataTable" msprop:Generator_RowChangedName="ConceptoRowChanged" msprop:Generator_RowClassName="ConceptoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClaveProdServ" msprop:Generator_ColumnVarNameInTable="columnClaveProdServ" msprop:Generator_ColumnPropNameInRow="ClaveProdServ" msprop:Generator_ColumnPropNameInTable="ClaveProdServColumn" msprop:Generator_UserColumnName="ClaveProdServ" type="xs:string" minOccurs="0" msdata:Ordinal="8" />
+              <xs:element name="ClaveUnidad" msprop:Generator_ColumnVarNameInTable="columnClaveUnidad" msprop:Generator_ColumnPropNameInRow="ClaveUnidad" msprop:Generator_ColumnPropNameInTable="ClaveUnidadColumn" msprop:Generator_UserColumnName="ClaveUnidad" type="xs:string" minOccurs="0" msdata:Ordinal="9" />
+              <xs:element name="UUIDPagado" msprop:Generator_ColumnVarNameInTable="columnUUIDPagado" msprop:Generator_ColumnPropNameInRow="UUIDPagado" msprop:Generator_ColumnPropNameInTable="UUIDPagadoColumn" msprop:Generator_UserColumnName="UUIDPagado" type="xs:string" minOccurs="0" msdata:Ordinal="10" />
+              <xs:element name="FechaPagado" msprop:Generator_ColumnVarNameInTable="columnFechaPagado" msprop:Generator_ColumnPropNameInRow="FechaPagado" msprop:Generator_ColumnPropNameInTable="FechaPagadoColumn" msprop:Generator_UserColumnName="FechaPagado" type="xs:string" minOccurs="0" msdata:Ordinal="11" />
+              <xs:element name="ParcialidadPagado" msprop:Generator_ColumnVarNameInTable="columnParcialidadPagado" msprop:Generator_ColumnPropNameInRow="ParcialidadPagado" msprop:Generator_ColumnPropNameInTable="ParcialidadPagadoColumn" msprop:Generator_UserColumnName="ParcialidadPagado" type="xs:string" minOccurs="0" msdata:Ordinal="12" />
+              <xs:element name="SaldoAnterior" msprop:Generator_ColumnVarNameInTable="columnSaldoAnterior" msprop:Generator_ColumnPropNameInRow="SaldoAnterior" msprop:Generator_ColumnPropNameInTable="SaldoAnteriorColumn" msprop:Generator_UserColumnName="SaldoAnterior" type="xs:string" minOccurs="0" msdata:Ordinal="13" />
+              <xs:element name="ImportePagado" msprop:Generator_ColumnVarNameInTable="columnImportePagado" msprop:Generator_ColumnPropNameInRow="ImportePagado" msprop:Generator_ColumnPropNameInTable="ImportePagadoColumn" msprop:Generator_UserColumnName="ImportePagado" type="xs:string" minOccurs="0" msdata:Ordinal="14" />
+              <xs:element name="SerieFolio" msprop:Generator_ColumnVarNameInTable="columnSerieFolio" msprop:Generator_ColumnPropNameInRow="SerieFolio" msprop:Generator_ColumnPropNameInTable="SerieFolioColumn" msprop:Generator_UserColumnName="SerieFolio" type="xs:string" minOccurs="0" msdata:Ordinal="15" />
+              <xs:element name="MonedaOriginal" msprop:Generator_ColumnVarNameInTable="columnMonedaOriginal" msprop:Generator_ColumnPropNameInRow="MonedaOriginal" msprop:Generator_ColumnPropNameInTable="MonedaOriginalColumn" msprop:Generator_UserColumnName="MonedaOriginal" type="xs:string" minOccurs="0" msdata:Ordinal="16" />
+            </xs:sequence>
+            <xs:attribute name="cantidad" form="unqualified" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:decimal" use="required" />
+            <xs:attribute name="unidad" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnunidad" msprop:Generator_ColumnPropNameInRow="unidad" msprop:Generator_ColumnPropNameInTable="unidadColumn" msprop:Generator_UserColumnName="unidad" type="xs:string" />
+            <xs:attribute name="noIdentificacion" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnnoIdentificacion" msprop:Generator_ColumnPropNameInRow="noIdentificacion" msprop:Generator_ColumnPropNameInTable="noIdentificacionColumn" msprop:Generator_UserColumnName="noIdentificacion" type="xs:string" />
+            <xs:attribute name="descripcion" form="unqualified" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" use="required" />
+            <xs:attribute name="valorUnitario" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnvalorUnitario" msprop:Generator_ColumnPropNameInRow="valorUnitario" msprop:Generator_ColumnPropNameInTable="valorUnitarioColumn" msprop:Generator_UserColumnName="valorUnitario" type="xs:decimal" use="required" />
+            <xs:attribute name="importe" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnimporte" msprop:Generator_ColumnPropNameInRow="importe" msprop:Generator_ColumnPropNameInTable="importeColumn" msprop:Generator_UserColumnName="importe" type="xs:decimal" use="required" />
+            <xs:attribute name="Concepto_Id" form="unqualified" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnConcepto_Id" msprop:Generator_ColumnPropNameInRow="Concepto_Id" msprop:Generator_ColumnPropNameInTable="Concepto_IdColumn" msprop:Generator_UserColumnName="Concepto_Id" type="xs:int" use="required" />
+            <xs:attribute name="Conceptos_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnConceptos_Id" msprop:Generator_ColumnPropNameInRow="Conceptos_Id" msprop:Generator_ColumnPropNameInTable="Conceptos_IdColumn" msprop:Generator_UserColumnName="Conceptos_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CuentaPredial" msprop:Generator_UserTableName="CuentaPredial" msprop:Generator_RowEvArgName="CuentaPredialRowChangeEvent" msprop:Generator_TableVarName="tableCuentaPredial" msprop:Generator_TablePropName="CuentaPredial" msprop:Generator_RowDeletingName="CuentaPredialRowDeleting" msprop:Generator_RowChangingName="CuentaPredialRowChanging" msprop:Generator_RowDeletedName="CuentaPredialRowDeleted" msprop:Generator_RowEvHandlerName="CuentaPredialRowChangeEventHandler" msprop:Generator_TableClassName="CuentaPredialDataTable" msprop:Generator_RowChangedName="CuentaPredialRowChanged" msprop:Generator_RowClassName="CuentaPredialRow">
+          <xs:complexType>
+            <xs:attribute name="numero" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnnumero" msprop:Generator_ColumnPropNameInRow="numero" msprop:Generator_ColumnPropNameInTable="numeroColumn" msprop:Generator_UserColumnName="numero" type="xs:string" use="required" />
+            <xs:attribute name="Concepto_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnConcepto_Id" msprop:Generator_ColumnPropNameInRow="Concepto_Id" msprop:Generator_ColumnPropNameInTable="Concepto_IdColumn" msprop:Generator_UserColumnName="Concepto_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ComplementoConcepto" msprop:Generator_UserTableName="ComplementoConcepto" msprop:Generator_RowEvArgName="ComplementoConceptoRowChangeEvent" msprop:Generator_TableVarName="tableComplementoConcepto" msprop:Generator_TablePropName="ComplementoConcepto" msprop:Generator_RowDeletingName="ComplementoConceptoRowDeleting" msprop:Generator_RowChangingName="ComplementoConceptoRowChanging" msprop:Generator_RowDeletedName="ComplementoConceptoRowDeleted" msprop:Generator_RowEvHandlerName="ComplementoConceptoRowChangeEventHandler" msprop:Generator_TableClassName="ComplementoConceptoDataTable" msprop:Generator_RowChangedName="ComplementoConceptoRowChanged" msprop:Generator_RowClassName="ComplementoConceptoRow">
+          <xs:complexType>
+            <xs:attribute name="Concepto_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnConcepto_Id" msprop:Generator_ColumnPropNameInRow="Concepto_Id" msprop:Generator_ColumnPropNameInTable="Concepto_IdColumn" msprop:Generator_UserColumnName="Concepto_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Parte" msprop:Generator_UserTableName="Parte" msprop:Generator_RowEvArgName="ParteRowChangeEvent" msprop:Generator_TableVarName="tableParte" msprop:Generator_TablePropName="Parte" msprop:Generator_RowDeletingName="ParteRowDeleting" msprop:Generator_RowChangingName="ParteRowChanging" msprop:Generator_RowDeletedName="ParteRowDeleted" msprop:Generator_RowEvHandlerName="ParteRowChangeEventHandler" msprop:Generator_TableClassName="ParteDataTable" msprop:Generator_RowChangedName="ParteRowChanged" msprop:Generator_RowClassName="ParteRow">
+          <xs:complexType>
+            <xs:attribute name="cantidad" form="unqualified" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:decimal" use="required" />
+            <xs:attribute name="unidad" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnunidad" msprop:Generator_ColumnPropNameInRow="unidad" msprop:Generator_ColumnPropNameInTable="unidadColumn" msprop:Generator_UserColumnName="unidad" type="xs:string" />
+            <xs:attribute name="noIdentificacion" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnnoIdentificacion" msprop:Generator_ColumnPropNameInRow="noIdentificacion" msprop:Generator_ColumnPropNameInTable="noIdentificacionColumn" msprop:Generator_UserColumnName="noIdentificacion" type="xs:string" />
+            <xs:attribute name="descripcion" form="unqualified" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" use="required" />
+            <xs:attribute name="valorUnitario" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnvalorUnitario" msprop:Generator_ColumnPropNameInRow="valorUnitario" msprop:Generator_ColumnPropNameInTable="valorUnitarioColumn" msprop:Generator_UserColumnName="valorUnitario" type="xs:decimal" />
+            <xs:attribute name="importe" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnimporte" msprop:Generator_ColumnPropNameInRow="importe" msprop:Generator_ColumnPropNameInTable="importeColumn" msprop:Generator_UserColumnName="importe" type="xs:decimal" />
+            <xs:attribute name="Parte_Id" form="unqualified" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnParte_Id" msprop:Generator_ColumnPropNameInRow="Parte_Id" msprop:Generator_ColumnPropNameInTable="Parte_IdColumn" msprop:Generator_UserColumnName="Parte_Id" type="xs:int" use="required" />
+            <xs:attribute name="Concepto_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnConcepto_Id" msprop:Generator_ColumnPropNameInRow="Concepto_Id" msprop:Generator_ColumnPropNameInTable="Concepto_IdColumn" msprop:Generator_UserColumnName="Concepto_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Impuestos" msprop:Generator_UserTableName="Impuestos" msprop:Generator_RowEvArgName="ImpuestosRowChangeEvent" msprop:Generator_TableVarName="tableImpuestos" msprop:Generator_TablePropName="Impuestos" msprop:Generator_RowDeletingName="ImpuestosRowDeleting" msprop:Generator_RowChangingName="ImpuestosRowChanging" msprop:Generator_RowDeletedName="ImpuestosRowDeleted" msprop:Generator_RowEvHandlerName="ImpuestosRowChangeEventHandler" msprop:Generator_TableClassName="ImpuestosDataTable" msprop:Generator_RowChangedName="ImpuestosRowChanged" msprop:Generator_RowClassName="ImpuestosRow">
+          <xs:complexType>
+            <xs:attribute name="totalImpuestosRetenidos" form="unqualified" msprop:Generator_ColumnVarNameInTable="columntotalImpuestosRetenidos" msprop:Generator_ColumnPropNameInRow="totalImpuestosRetenidos" msprop:Generator_ColumnPropNameInTable="totalImpuestosRetenidosColumn" msprop:Generator_UserColumnName="totalImpuestosRetenidos" type="xs:decimal" />
+            <xs:attribute name="totalImpuestosTrasladados" form="unqualified" msprop:Generator_ColumnVarNameInTable="columntotalImpuestosTrasladados" msprop:Generator_ColumnPropNameInRow="totalImpuestosTrasladados" msprop:Generator_ColumnPropNameInTable="totalImpuestosTrasladadosColumn" msprop:Generator_UserColumnName="totalImpuestosTrasladados" type="xs:decimal" />
+            <xs:attribute name="Impuestos_Id" form="unqualified" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnImpuestos_Id" msprop:Generator_ColumnPropNameInRow="Impuestos_Id" msprop:Generator_ColumnPropNameInTable="Impuestos_IdColumn" msprop:Generator_UserColumnName="Impuestos_Id" type="xs:int" use="required" />
+            <xs:attribute name="Comprobante_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnComprobante_Id" msprop:Generator_ColumnPropNameInRow="Comprobante_Id" msprop:Generator_ColumnPropNameInTable="Comprobante_IdColumn" msprop:Generator_UserColumnName="Comprobante_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Retenciones" msprop:Generator_UserTableName="Retenciones" msprop:Generator_RowEvArgName="RetencionesRowChangeEvent" msprop:Generator_TableVarName="tableRetenciones" msprop:Generator_TablePropName="Retenciones" msprop:Generator_RowDeletingName="RetencionesRowDeleting" msprop:Generator_RowChangingName="RetencionesRowChanging" msprop:Generator_RowDeletedName="RetencionesRowDeleted" msprop:Generator_RowEvHandlerName="RetencionesRowChangeEventHandler" msprop:Generator_TableClassName="RetencionesDataTable" msprop:Generator_RowChangedName="RetencionesRowChanged" msprop:Generator_RowClassName="RetencionesRow">
+          <xs:complexType>
+            <xs:attribute name="Retenciones_Id" form="unqualified" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnRetenciones_Id" msprop:Generator_ColumnPropNameInRow="Retenciones_Id" msprop:Generator_ColumnPropNameInTable="Retenciones_IdColumn" msprop:Generator_UserColumnName="Retenciones_Id" type="xs:int" use="required" />
+            <xs:attribute name="Impuestos_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnImpuestos_Id" msprop:Generator_ColumnPropNameInRow="Impuestos_Id" msprop:Generator_ColumnPropNameInTable="Impuestos_IdColumn" msprop:Generator_UserColumnName="Impuestos_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Retencion" msprop:Generator_UserTableName="Retencion" msprop:Generator_RowEvArgName="RetencionRowChangeEvent" msprop:Generator_TableVarName="tableRetencion" msprop:Generator_TablePropName="Retencion" msprop:Generator_RowDeletingName="RetencionRowDeleting" msprop:Generator_RowChangingName="RetencionRowChanging" msprop:Generator_RowDeletedName="RetencionRowDeleted" msprop:Generator_RowEvHandlerName="RetencionRowChangeEventHandler" msprop:Generator_TableClassName="RetencionDataTable" msprop:Generator_RowChangedName="RetencionRowChanged" msprop:Generator_RowClassName="RetencionRow">
+          <xs:complexType>
+            <xs:attribute name="impuesto" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnimpuesto" msprop:Generator_ColumnPropNameInRow="impuesto" msprop:Generator_ColumnPropNameInTable="impuestoColumn" msprop:Generator_UserColumnName="impuesto" type="xs:string" use="required" />
+            <xs:attribute name="importe" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnimporte" msprop:Generator_ColumnPropNameInRow="importe" msprop:Generator_ColumnPropNameInTable="importeColumn" msprop:Generator_UserColumnName="importe" type="xs:decimal" use="required" />
+            <xs:attribute name="Retenciones_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnRetenciones_Id" msprop:Generator_ColumnPropNameInRow="Retenciones_Id" msprop:Generator_ColumnPropNameInTable="Retenciones_IdColumn" msprop:Generator_UserColumnName="Retenciones_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Traslados" msprop:Generator_UserTableName="Traslados" msprop:Generator_RowEvArgName="TrasladosRowChangeEvent" msprop:Generator_TableVarName="tableTraslados" msprop:Generator_TablePropName="Traslados" msprop:Generator_RowDeletingName="TrasladosRowDeleting" msprop:Generator_RowChangingName="TrasladosRowChanging" msprop:Generator_RowDeletedName="TrasladosRowDeleted" msprop:Generator_RowEvHandlerName="TrasladosRowChangeEventHandler" msprop:Generator_TableClassName="TrasladosDataTable" msprop:Generator_RowChangedName="TrasladosRowChanged" msprop:Generator_RowClassName="TrasladosRow">
+          <xs:complexType>
+            <xs:attribute name="Traslados_Id" form="unqualified" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnTraslados_Id" msprop:Generator_ColumnPropNameInRow="Traslados_Id" msprop:Generator_ColumnPropNameInTable="Traslados_IdColumn" msprop:Generator_UserColumnName="Traslados_Id" type="xs:int" use="required" />
+            <xs:attribute name="Impuestos_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnImpuestos_Id" msprop:Generator_ColumnPropNameInRow="Impuestos_Id" msprop:Generator_ColumnPropNameInTable="Impuestos_IdColumn" msprop:Generator_UserColumnName="Impuestos_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Traslado" msprop:Generator_UserTableName="Traslado" msprop:Generator_RowEvArgName="TrasladoRowChangeEvent" msprop:Generator_TableVarName="tableTraslado" msprop:Generator_TablePropName="Traslado" msprop:Generator_RowDeletingName="TrasladoRowDeleting" msprop:Generator_RowChangingName="TrasladoRowChanging" msprop:Generator_RowDeletedName="TrasladoRowDeleted" msprop:Generator_RowEvHandlerName="TrasladoRowChangeEventHandler" msprop:Generator_TableClassName="TrasladoDataTable" msprop:Generator_RowChangedName="TrasladoRowChanged" msprop:Generator_RowClassName="TrasladoRow">
+          <xs:complexType>
+            <xs:attribute name="impuesto" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnimpuesto" msprop:Generator_ColumnPropNameInRow="impuesto" msprop:Generator_ColumnPropNameInTable="impuestoColumn" msprop:Generator_UserColumnName="impuesto" type="xs:string" use="required" />
+            <xs:attribute name="tasa" form="unqualified" msprop:Generator_ColumnVarNameInTable="columntasa" msprop:Generator_ColumnPropNameInRow="tasa" msprop:Generator_ColumnPropNameInTable="tasaColumn" msprop:Generator_UserColumnName="tasa" type="xs:decimal" use="required" />
+            <xs:attribute name="importe" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnimporte" msprop:Generator_ColumnPropNameInRow="importe" msprop:Generator_ColumnPropNameInTable="importeColumn" msprop:Generator_UserColumnName="importe" type="xs:decimal" use="required" />
+            <xs:attribute name="Traslados_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnTraslados_Id" msprop:Generator_ColumnPropNameInRow="Traslados_Id" msprop:Generator_ColumnPropNameInTable="Traslados_IdColumn" msprop:Generator_UserColumnName="Traslados_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Complemento" msprop:Generator_UserTableName="Complemento" msprop:Generator_RowEvArgName="ComplementoRowChangeEvent" msprop:Generator_TableVarName="tableComplemento" msprop:Generator_TablePropName="Complemento" msprop:Generator_RowDeletingName="ComplementoRowDeleting" msprop:Generator_RowChangingName="ComplementoRowChanging" msprop:Generator_RowDeletedName="ComplementoRowDeleted" msprop:Generator_RowEvHandlerName="ComplementoRowChangeEventHandler" msprop:Generator_TableClassName="ComplementoDataTable" msprop:Generator_RowChangedName="ComplementoRowChanged" msprop:Generator_RowClassName="ComplementoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Complemento_Id" msprop:Generator_ColumnVarNameInTable="columnComplemento_Id" msprop:Generator_ColumnPropNameInRow="Complemento_Id" msprop:Generator_ColumnPropNameInTable="Complemento_IdColumn" msprop:Generator_UserColumnName="Complemento_Id" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+            </xs:sequence>
+            <xs:attribute name="Comprobante_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnComprobante_Id" msprop:Generator_ColumnPropNameInRow="Comprobante_Id" msprop:Generator_ColumnPropNameInTable="Comprobante_IdColumn" msprop:Generator_UserColumnName="Comprobante_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Addenda" msprop:Generator_UserTableName="Addenda" msprop:Generator_RowEvArgName="AddendaRowChangeEvent" msprop:Generator_TableVarName="tableAddenda" msprop:Generator_TablePropName="Addenda" msprop:Generator_RowDeletingName="AddendaRowDeleting" msprop:Generator_RowChangingName="AddendaRowChanging" msprop:Generator_RowDeletedName="AddendaRowDeleted" msprop:Generator_RowEvHandlerName="AddendaRowChangeEventHandler" msprop:Generator_TableClassName="AddendaDataTable" msprop:Generator_RowChangedName="AddendaRowChanged" msprop:Generator_RowClassName="AddendaRow">
+          <xs:complexType>
+            <xs:attribute name="Comprobante_Id" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnComprobante_Id" msprop:Generator_ColumnPropNameInRow="Comprobante_Id" msprop:Generator_ColumnPropNameInTable="Comprobante_IdColumn" msprop:Generator_UserColumnName="Comprobante_Id" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TimbreFiscalDigital" msprop:Generator_UserTableName="TimbreFiscalDigital" msprop:Generator_RowEvArgName="TimbreFiscalDigitalRowChangeEvent" msprop:Generator_TableVarName="tableTimbreFiscalDigital" msprop:Generator_TablePropName="TimbreFiscalDigital" msprop:Generator_RowDeletingName="TimbreFiscalDigitalRowDeleting" msprop:Generator_RowChangingName="TimbreFiscalDigitalRowChanging" msprop:Generator_RowDeletedName="TimbreFiscalDigitalRowDeleted" msprop:Generator_RowEvHandlerName="TimbreFiscalDigitalRowChangeEventHandler" msprop:Generator_TableClassName="TimbreFiscalDigitalDataTable" msprop:Generator_RowChangedName="TimbreFiscalDigitalRowChanged" msprop:Generator_RowClassName="TimbreFiscalDigitalRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Complemento_Id" msprop:Generator_ColumnVarNameInTable="columnComplemento_Id" msprop:Generator_ColumnPropNameInRow="Complemento_Id" msprop:Generator_ColumnPropNameInTable="Complemento_IdColumn" msprop:Generator_UserColumnName="Complemento_Id" type="xs:string" minOccurs="0" msdata:Ordinal="6" />
+            </xs:sequence>
+            <xs:attribute name="version" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnversion" msprop:Generator_ColumnPropNameInRow="version" msprop:Generator_ColumnPropNameInTable="versionColumn" msprop:Generator_UserColumnName="version" type="xs:string" use="required" />
+            <xs:attribute name="UUID" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnUUID" msprop:Generator_ColumnPropNameInRow="UUID" msprop:Generator_ColumnPropNameInTable="UUIDColumn" msprop:Generator_UserColumnName="UUID" type="xs:string" use="required" />
+            <xs:attribute name="FechaTimbrado" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnFechaTimbrado" msprop:Generator_ColumnPropNameInRow="FechaTimbrado" msprop:Generator_ColumnPropNameInTable="FechaTimbradoColumn" msprop:Generator_UserColumnName="FechaTimbrado" type="xs:dateTime" use="required" />
+            <xs:attribute name="selloCFD" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnselloCFD" msprop:Generator_ColumnPropNameInRow="selloCFD" msprop:Generator_ColumnPropNameInTable="selloCFDColumn" msprop:Generator_UserColumnName="selloCFD" type="xs:string" use="required" />
+            <xs:attribute name="noCertificadoSAT" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnnoCertificadoSAT" msprop:Generator_ColumnPropNameInRow="noCertificadoSAT" msprop:Generator_ColumnPropNameInTable="noCertificadoSATColumn" msprop:Generator_UserColumnName="noCertificadoSAT" type="xs:string" use="required" />
+            <xs:attribute name="selloSAT" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnselloSAT" msprop:Generator_ColumnPropNameInRow="selloSAT" msprop:Generator_ColumnPropNameInTable="selloSATColumn" msprop:Generator_UserColumnName="selloSAT" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Adicionales" msprop:Generator_UserTableName="Adicionales" msprop:Generator_RowEvArgName="AdicionalesRowChangeEvent" msprop:Generator_TableVarName="tableAdicionales" msprop:Generator_TablePropName="Adicionales" msprop:Generator_RowDeletingName="AdicionalesRowDeleting" msprop:Generator_RowChangingName="AdicionalesRowChanging" msprop:Generator_RowDeletedName="AdicionalesRowDeleted" msprop:Generator_RowEvHandlerName="AdicionalesRowChangeEventHandler" msprop:Generator_TableClassName="AdicionalesDataTable" msprop:Generator_RowChangedName="AdicionalesRowChanged" msprop:Generator_RowClassName="AdicionalesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Activa" msprop:Generator_ColumnVarNameInTable="columnActiva" msprop:Generator_ColumnPropNameInRow="Activa" msprop:Generator_ColumnPropNameInTable="ActivaColumn" msprop:Generator_UserColumnName="Activa" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CBB" msprop:Generator_ColumnVarNameInTable="columnCBB" msprop:Generator_ColumnPropNameInRow="CBB" msprop:Generator_ColumnPropNameInTable="CBBColumn" msprop:Generator_UserColumnName="CBB" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="CadenaOriginal_TFD" msprop:Generator_ColumnVarNameInTable="columnCadenaOriginal_TFD" msprop:Generator_ColumnPropNameInRow="CadenaOriginal_TFD" msprop:Generator_ColumnPropNameInTable="CadenaOriginal_TFDColumn" msprop:Generator_UserColumnName="CadenaOriginal_TFD" type="xs:string" minOccurs="0" />
+              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo" type="xs:string" minOccurs="0" />
+              <xs:element name="Logotipo" msprop:Generator_ColumnVarNameInTable="columnLogotipo" msprop:Generator_ColumnPropNameInRow="Logotipo" msprop:Generator_ColumnPropNameInTable="LogotipoColumn" msprop:Generator_UserColumnName="Logotipo" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="ImporteLetra" msprop:Generator_ColumnVarNameInTable="columnImporteLetra" msprop:Generator_ColumnPropNameInRow="ImporteLetra" msprop:Generator_ColumnPropNameInTable="ImporteLetraColumn" msprop:Generator_UserColumnName="ImporteLetra" type="xs:string" minOccurs="0" />
+              <xs:element name="Observaciones" msprop:Generator_ColumnVarNameInTable="columnObservaciones" msprop:Generator_ColumnPropNameInRow="Observaciones" msprop:Generator_ColumnPropNameInTable="ObservacionesColumn" msprop:Generator_UserColumnName="Observaciones" type="xs:string" minOccurs="0" />
+              <xs:element name="Telefono" msprop:Generator_ColumnVarNameInTable="columnTelefono" msprop:Generator_ColumnPropNameInRow="Telefono" msprop:Generator_ColumnPropNameInTable="TelefonoColumn" msprop:Generator_UserColumnName="Telefono" type="xs:string" minOccurs="0" />
+              <xs:element name="UUIDRel" msprop:Generator_ColumnVarNameInTable="columnUUIDRel" msprop:Generator_ColumnPropNameInRow="UUIDRel" msprop:Generator_ColumnPropNameInTable="UUIDRelColumn" msprop:Generator_UserColumnName="UUIDRel" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoRelacion" msprop:Generator_ColumnVarNameInTable="columnTipoRelacion" msprop:Generator_ColumnPropNameInRow="TipoRelacion" msprop:Generator_ColumnPropNameInTable="TipoRelacionColumn" msprop:Generator_UserColumnName="TipoRelacion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Comprobante" />
+      <xs:field xpath="@Comprobante_Id" />
+    </xs:unique>
+    <xs:unique name="Emisor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Emisor" />
+      <xs:field xpath="@Emisor_Id" />
+    </xs:unique>
+    <xs:unique name="Receptor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Receptor" />
+      <xs:field xpath="@Receptor_Id" />
+    </xs:unique>
+    <xs:unique name="Conceptos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Conceptos" />
+      <xs:field xpath="@Conceptos_Id" />
+    </xs:unique>
+    <xs:unique name="Concepto_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Concepto" />
+      <xs:field xpath="@Concepto_Id" />
+    </xs:unique>
+    <xs:unique name="Parte_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Parte" />
+      <xs:field xpath="@Parte_Id" />
+    </xs:unique>
+    <xs:unique name="Impuestos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Impuestos" />
+      <xs:field xpath="@Impuestos_Id" />
+    </xs:unique>
+    <xs:unique name="Retenciones_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Retenciones" />
+      <xs:field xpath="@Retenciones_Id" />
+    </xs:unique>
+    <xs:unique name="Traslados_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Traslados" />
+      <xs:field xpath="@Traslados_Id" />
+    </xs:unique>
+    <xs:unique name="Complemento_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:Complemento" />
+      <xs:field xpath="mstns:Complemento_Id" />
+    </xs:unique>
+    <xs:keyref name="FK_Complemento_TimbreFiscalDigital" refer="Complemento_Constraint1" msprop:rel_Generator_UserChildTable="TimbreFiscalDigital" msprop:rel_Generator_ChildPropName="GetTimbreFiscalDigitalRows" msprop:rel_Generator_UserRelationName="FK_Complemento_TimbreFiscalDigital" msprop:rel_Generator_ParentPropName="ComplementoRow" msprop:rel_Generator_RelationVarName="relationFK_Complemento_TimbreFiscalDigital" msprop:rel_Generator_UserParentTable="Complemento">
+      <xs:selector xpath=".//mstns:TimbreFiscalDigital" />
+      <xs:field xpath="mstns:Complemento_Id" />
+    </xs:keyref>
+    <xs:keyref name="Comprobante_Addenda" refer="Constraint1" msprop:rel_Generator_UserChildTable="Addenda" msprop:rel_Generator_ChildPropName="GetAddendaRows" msprop:rel_Generator_UserRelationName="Comprobante_Addenda" msprop:rel_Generator_ParentPropName="ComprobanteRow" msprop:rel_Generator_RelationVarName="relationComprobante_Addenda" msprop:rel_Generator_UserParentTable="Comprobante">
+      <xs:selector xpath=".//mstns:Addenda" />
+      <xs:field xpath="@Comprobante_Id" />
+    </xs:keyref>
+    <xs:keyref name="Comprobante_Complemento" refer="Constraint1" msprop:rel_Generator_UserChildTable="Complemento" msprop:rel_Generator_ChildPropName="GetComplementoRows" msprop:rel_Generator_UserRelationName="Comprobante_Complemento" msprop:rel_Generator_ParentPropName="ComprobanteRow" msprop:rel_Generator_RelationVarName="relationComprobante_Complemento" msprop:rel_Generator_UserParentTable="Comprobante">
+      <xs:selector xpath=".//mstns:Complemento" />
+      <xs:field xpath="@Comprobante_Id" />
+    </xs:keyref>
+    <xs:keyref name="Traslados_Traslado" refer="Traslados_Constraint1" msprop:rel_Generator_UserChildTable="Traslado" msprop:rel_Generator_ChildPropName="GetTrasladoRows" msprop:rel_Generator_UserRelationName="Traslados_Traslado" msprop:rel_Generator_ParentPropName="TrasladosRow" msprop:rel_Generator_RelationVarName="relationTraslados_Traslado" msprop:rel_Generator_UserParentTable="Traslados">
+      <xs:selector xpath=".//mstns:Traslado" />
+      <xs:field xpath="@Traslados_Id" />
+    </xs:keyref>
+    <xs:keyref name="Impuestos_Traslados" refer="Impuestos_Constraint1" msprop:rel_Generator_UserChildTable="Traslados" msprop:rel_Generator_ChildPropName="GetTrasladosRows" msprop:rel_Generator_UserRelationName="Impuestos_Traslados" msprop:rel_Generator_ParentPropName="ImpuestosRow" msprop:rel_Generator_RelationVarName="relationImpuestos_Traslados" msprop:rel_Generator_UserParentTable="Impuestos">
+      <xs:selector xpath=".//mstns:Traslados" />
+      <xs:field xpath="@Impuestos_Id" />
+    </xs:keyref>
+    <xs:keyref name="Retenciones_Retencion" refer="Retenciones_Constraint1" msprop:rel_Generator_UserChildTable="Retencion" msprop:rel_Generator_ChildPropName="GetRetencionRows" msprop:rel_Generator_UserRelationName="Retenciones_Retencion" msprop:rel_Generator_ParentPropName="RetencionesRow" msprop:rel_Generator_RelationVarName="relationRetenciones_Retencion" msprop:rel_Generator_UserParentTable="Retenciones">
+      <xs:selector xpath=".//mstns:Retencion" />
+      <xs:field xpath="@Retenciones_Id" />
+    </xs:keyref>
+    <xs:keyref name="Impuestos_Retenciones" refer="Impuestos_Constraint1" msprop:rel_Generator_UserChildTable="Retenciones" msprop:rel_Generator_ChildPropName="GetRetencionesRows" msprop:rel_Generator_UserRelationName="Impuestos_Retenciones" msprop:rel_Generator_ParentPropName="ImpuestosRow" msprop:rel_Generator_RelationVarName="relationImpuestos_Retenciones" msprop:rel_Generator_UserParentTable="Impuestos">
+      <xs:selector xpath=".//mstns:Retenciones" />
+      <xs:field xpath="@Impuestos_Id" />
+    </xs:keyref>
+    <xs:keyref name="Comprobante_Impuestos" refer="Constraint1" msprop:rel_Generator_UserChildTable="Impuestos" msprop:rel_Generator_ChildPropName="GetImpuestosRows" msprop:rel_Generator_UserRelationName="Comprobante_Impuestos" msprop:rel_Generator_ParentPropName="ComprobanteRow" msprop:rel_Generator_RelationVarName="relationComprobante_Impuestos" msprop:rel_Generator_UserParentTable="Comprobante">
+      <xs:selector xpath=".//mstns:Impuestos" />
+      <xs:field xpath="@Comprobante_Id" />
+    </xs:keyref>
+    <xs:keyref name="Concepto_Parte" refer="Concepto_Constraint1" msprop:rel_Generator_UserChildTable="Parte" msprop:rel_Generator_ChildPropName="GetParteRows" msprop:rel_Generator_UserRelationName="Concepto_Parte" msprop:rel_Generator_ParentPropName="ConceptoRow" msprop:rel_Generator_RelationVarName="relationConcepto_Parte" msprop:rel_Generator_UserParentTable="Concepto">
+      <xs:selector xpath=".//mstns:Parte" />
+      <xs:field xpath="@Concepto_Id" />
+    </xs:keyref>
+    <xs:keyref name="Concepto_ComplementoConcepto" refer="Concepto_Constraint1" msprop:rel_Generator_UserChildTable="ComplementoConcepto" msprop:rel_Generator_ChildPropName="GetComplementoConceptoRows" msprop:rel_Generator_UserRelationName="Concepto_ComplementoConcepto" msprop:rel_Generator_ParentPropName="ConceptoRow" msprop:rel_Generator_RelationVarName="relationConcepto_ComplementoConcepto" msprop:rel_Generator_UserParentTable="Concepto">
+      <xs:selector xpath=".//mstns:ComplementoConcepto" />
+      <xs:field xpath="@Concepto_Id" />
+    </xs:keyref>
+    <xs:keyref name="Concepto_CuentaPredial" refer="Concepto_Constraint1" msprop:rel_Generator_UserChildTable="CuentaPredial" msprop:rel_Generator_ChildPropName="GetCuentaPredialRows" msprop:rel_Generator_UserRelationName="Concepto_CuentaPredial" msprop:rel_Generator_ParentPropName="ConceptoRow" msprop:rel_Generator_RelationVarName="relationConcepto_CuentaPredial" msprop:rel_Generator_UserParentTable="Concepto">
+      <xs:selector xpath=".//mstns:CuentaPredial" />
+      <xs:field xpath="@Concepto_Id" />
+    </xs:keyref>
+    <xs:keyref name="Conceptos_Concepto" refer="Conceptos_Constraint1" msprop:rel_Generator_UserChildTable="Concepto" msprop:rel_Generator_ChildPropName="GetConceptoRows" msprop:rel_Generator_UserRelationName="Conceptos_Concepto" msprop:rel_Generator_ParentPropName="ConceptosRow" msprop:rel_Generator_RelationVarName="relationConceptos_Concepto" msprop:rel_Generator_UserParentTable="Conceptos">
+      <xs:selector xpath=".//mstns:Concepto" />
+      <xs:field xpath="@Conceptos_Id" />
+    </xs:keyref>
+    <xs:keyref name="Comprobante_Conceptos" refer="Constraint1" msprop:rel_Generator_UserChildTable="Conceptos" msprop:rel_Generator_ChildPropName="GetConceptosRows" msprop:rel_Generator_UserRelationName="Comprobante_Conceptos" msprop:rel_Generator_ParentPropName="ComprobanteRow" msprop:rel_Generator_RelationVarName="relationComprobante_Conceptos" msprop:rel_Generator_UserParentTable="Comprobante">
+      <xs:selector xpath=".//mstns:Conceptos" />
+      <xs:field xpath="@Comprobante_Id" />
+    </xs:keyref>
+    <xs:keyref name="Receptor_Domicilio" refer="Receptor_Constraint1" msprop:rel_Generator_UserChildTable="Domicilio" msprop:rel_Generator_ChildPropName="GetDomicilioRows" msprop:rel_Generator_UserRelationName="Receptor_Domicilio" msprop:rel_Generator_ParentPropName="ReceptorRow" msprop:rel_Generator_RelationVarName="relationReceptor_Domicilio" msprop:rel_Generator_UserParentTable="Receptor">
+      <xs:selector xpath=".//mstns:Domicilio" />
+      <xs:field xpath="@Receptor_Id" />
+    </xs:keyref>
+    <xs:keyref name="Comprobante_Receptor" refer="Constraint1" msprop:rel_Generator_UserChildTable="Receptor" msprop:rel_Generator_ChildPropName="GetReceptorRows" msprop:rel_Generator_UserRelationName="Comprobante_Receptor" msprop:rel_Generator_ParentPropName="ComprobanteRow" msprop:rel_Generator_RelationVarName="relationComprobante_Receptor" msprop:rel_Generator_UserParentTable="Comprobante">
+      <xs:selector xpath=".//mstns:Receptor" />
+      <xs:field xpath="@Comprobante_Id" />
+    </xs:keyref>
+    <xs:keyref name="Emisor_ExpedidoEn" refer="Emisor_Constraint1" msprop:rel_Generator_UserChildTable="ExpedidoEn" msprop:rel_Generator_ChildPropName="GetExpedidoEnRows" msprop:rel_Generator_UserRelationName="Emisor_ExpedidoEn" msprop:rel_Generator_ParentPropName="EmisorRow" msprop:rel_Generator_RelationVarName="relationEmisor_ExpedidoEn" msprop:rel_Generator_UserParentTable="Emisor">
+      <xs:selector xpath=".//mstns:ExpedidoEn" />
+      <xs:field xpath="@Emisor_Id" />
+    </xs:keyref>
+    <xs:keyref name="Emisor_DomicilioFiscal" refer="Emisor_Constraint1" msprop:rel_Generator_UserChildTable="DomicilioFiscal" msprop:rel_Generator_ChildPropName="GetDomicilioFiscalRows" msprop:rel_Generator_UserRelationName="Emisor_DomicilioFiscal" msprop:rel_Generator_ParentPropName="EmisorRow" msprop:rel_Generator_RelationVarName="relationEmisor_DomicilioFiscal" msprop:rel_Generator_UserParentTable="Emisor">
+      <xs:selector xpath=".//mstns:DomicilioFiscal" />
+      <xs:field xpath="@Emisor_Id" />
+    </xs:keyref>
+    <xs:keyref name="Comprobante_Emisor" refer="Constraint1" msprop:rel_Generator_UserChildTable="Emisor" msprop:rel_Generator_ChildPropName="GetEmisorRows" msprop:rel_Generator_UserRelationName="Comprobante_Emisor" msprop:rel_Generator_ParentPropName="ComprobanteRow" msprop:rel_Generator_RelationVarName="relationComprobante_Emisor" msprop:rel_Generator_UserParentTable="Comprobante">
+      <xs:selector xpath=".//mstns:Emisor" />
+      <xs:field xpath="@Comprobante_Id" />
+    </xs:keyref>
+    <xs:keyref name="Parte_InformacionAduanera" refer="Parte_Constraint1" msprop:rel_Generator_UserChildTable="InformacionAduanera" msprop:rel_Generator_ChildPropName="GetInformacionAduaneraRows" msprop:rel_Generator_UserRelationName="Parte_InformacionAduanera" msprop:rel_Generator_ParentPropName="ParteRow" msprop:rel_Generator_RelationVarName="relationParte_InformacionAduanera" msprop:rel_Generator_UserParentTable="Parte">
+      <xs:selector xpath=".//mstns:InformacionAduanera" />
+      <xs:field xpath="@Parte_Id" />
+    </xs:keyref>
+    <xs:keyref name="Concepto_InformacionAduanera" refer="Concepto_Constraint1" msprop:rel_Generator_UserChildTable="InformacionAduanera" msprop:rel_Generator_ChildPropName="GetInformacionAduaneraRows" msprop:rel_Generator_UserRelationName="Concepto_InformacionAduanera" msprop:rel_Generator_ParentPropName="ConceptoRow" msprop:rel_Generator_RelationVarName="relationConcepto_InformacionAduanera" msprop:rel_Generator_UserParentTable="Concepto">
+      <xs:selector xpath=".//mstns:InformacionAduanera" />
+      <xs:field xpath="@Concepto_Id" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

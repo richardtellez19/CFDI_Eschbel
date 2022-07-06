@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" targetNamespace="http://www.sat.gob.mx/TimbreFiscalDigital" xmlns:mstns="http://www.sat.gob.mx/TimbreFiscalDigital" xmlns="http://www.sat.gob.mx/TimbreFiscalDigital" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="TimbreFiscalDigital">
+    <xs:complexType>
+      <xs:attribute name="version" form="unqualified" type="xs:string" use="required" />
+      <xs:attribute name="UUID" form="unqualified" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="36" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="FechaTimbrado" form="unqualified" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime" />
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="selloCFD" form="unqualified" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="noCertificadoSAT" form="unqualified" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="selloSAT" form="unqualified" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="TimbreFiscalDigital" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

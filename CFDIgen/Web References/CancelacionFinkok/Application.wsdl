@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://facturacion.finkok.com/cancel" xmlns:senc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s0="apps.services.soap.core.views" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://facturacion.finkok.com/cancellation" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing" xmlns:s12env="http://www.w3.org/2003/05/soap-envelope/" xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s12enc="http://www.w3.org/2003/05/soap-encoding/" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/" name="Application" targetNamespace="http://facturacion.finkok.com/cancel" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://facturacion.finkok.com/cancellation">
+      <xs:complexType name="stringArray">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="stringArray" type="s1:stringArray" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="apps.services.soap.core.views">
+      <xs:import namespace="http://facturacion.finkok.com/cancellation" />
+      <xs:import namespace="http://facturacion.finkok.com/cancel" />
+      <xs:complexType name="CancelaCFDResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Folios" nillable="true" type="s0:FolioArray" />
+          <xs:element minOccurs="0" name="Acuse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RfcEmisor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodEstatus" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AcuseSatEstatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sat" nillable="true" type="s0:AcuseSATConsulta" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FolioArray">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Folio" nillable="true" type="s0:Folio" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Folio">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EstatusUUID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EstatusCancelacion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReceiptResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="success" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="receipt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="taxpayer_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UUIDS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="uuids" nillable="true" type="s1:stringArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelPendingResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="uuids" nillable="true" type="tns:stringArray" />
+          <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AcuseSATConsulta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EsCancelable" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoEstatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EstatusCancelacion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UUIDS_AR">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="uuids_ar" nillable="true" type="s0:UUID_ARArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UUID_ARArray">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="UUID_AR" nillable="true" type="s0:UUID_AR" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UUID_AR">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="respuesta" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryPendingResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="uuid_status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="next_attempt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attempts" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AcceptRejectResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="rechazo" nillable="true" type="s0:RechazaArray" />
+          <xs:element minOccurs="0" name="aceptacion" nillable="true" type="s0:AceptaArray" />
+          <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AceptaArray">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Acepta" nillable="true" type="s0:Acepta" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Acepta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RechazaArray">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Rechaza" nillable="true" type="s0:Rechaza" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Rechaza">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RelatedResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Padres" nillable="true" type="s0:PadreArray" />
+          <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Hijos" nillable="true" type="s0:HijoArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="HijoArray">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Hijo" nillable="true" type="s0:Hijo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Hijo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="emisor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="receptor" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PadreArray">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Padre" nillable="true" type="s0:Padre" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Padre">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="emisor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="receptor" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Padre" type="s0:Padre" />
+      <xs:element name="PadreArray" type="s0:PadreArray" />
+      <xs:element name="Hijo" type="s0:Hijo" />
+      <xs:element name="HijoArray" type="s0:HijoArray" />
+      <xs:element name="RelatedResult" type="s0:RelatedResult" />
+      <xs:element name="Rechaza" type="s0:Rechaza" />
+      <xs:element name="RechazaArray" type="s0:RechazaArray" />
+      <xs:element name="Acepta" type="s0:Acepta" />
+      <xs:element name="AceptaArray" type="s0:AceptaArray" />
+      <xs:element name="AcceptRejectResult" type="s0:AcceptRejectResult" />
+      <xs:element name="QueryPendingResult" type="s0:QueryPendingResult" />
+      <xs:element name="UUID_AR" type="s0:UUID_AR" />
+      <xs:element name="UUID_ARArray" type="s0:UUID_ARArray" />
+      <xs:element name="UUIDS_AR" type="s0:UUIDS_AR" />
+      <xs:element name="AcuseSATConsulta" type="s0:AcuseSATConsulta" />
+      <xs:element name="CancelPendingResult" type="s0:CancelPendingResult" />
+      <xs:element name="UUIDS" type="s0:UUIDS" />
+      <xs:element name="ReceiptResult" type="s0:ReceiptResult" />
+      <xs:element name="Folio" type="s0:Folio" />
+      <xs:element name="FolioArray" type="s0:FolioArray" />
+      <xs:element name="AcuseSatEstatus" type="s0:AcuseSatEstatus" />
+      <xs:element name="CancelaCFDResult" type="s0:CancelaCFDResult" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://facturacion.finkok.com/cancel">
+      <xs:import namespace="apps.services.soap.core.views" />
+      <xs:complexType name="get_pending">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rtaxpayer_id" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sign_cancel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UUIDS" nillable="true" type="s0:UUIDS" />
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="taxpayer_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="store_pending" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancel_signatureResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cancel_signatureResult" nillable="true" type="s0:CancelaCFDResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="get_out_sat_statusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="get_out_sat_statusResult" nillable="true" type="s0:AcuseSatEstatus" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="get_sat_status">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="taxpayer_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rtaxpayer_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="total" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="get_relatedResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="get_relatedResult" nillable="true" type="s0:RelatedResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="out_cancelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="out_cancelResult" nillable="true" type="s0:CancelaCFDResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="get_out_pendingResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="get_out_pendingResult" nillable="true" type="s0:CancelPendingResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cancelResult" nillable="true" type="s0:CancelaCFDResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sign_cancelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sign_cancelResult" nillable="true" type="s0:CancelaCFDResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="get_out_related">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rtaxpayer_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cer" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="key" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="get_receiptResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="get_receiptResult" nillable="true" type="s0:ReceiptResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="get_related">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rtaxpayer_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cer" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="key" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="get_pendingResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="get_pendingResult" nillable="true" type="s0:CancelPendingResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="get_out_pending">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rtaxpayer_id" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="get_out_sat_status">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="taxpayer_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rtaxpayer_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="total" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="get_sat_statusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="get_sat_statusResult" nillable="true" type="s0:AcuseSatEstatus" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancel_signature">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="store_pending" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="out_accept_reject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UUID_AR" nillable="true" type="s0:UUID_AR" />
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rtaxpayer_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cer" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="key" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="get_out_relatedResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="get_out_relatedResult" nillable="true" type="s0:RelatedResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UUIDS" nillable="true" type="s0:UUIDS" />
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="taxpayer_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cer" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="key" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="store_pending" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="get_receipt">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="taxpayer_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="stringArray">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="accept_reject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UUIDS_AR" nillable="true" type="s0:UUIDS_AR" />
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rtaxpayer_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cer" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="key" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="query_pending_cancellation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="query_pending_cancellationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="query_pending_cancellationResult" nillable="true" type="s0:QueryPendingResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="accept_rejectResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accept_rejectResult" nillable="true" type="s0:AcceptRejectResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="out_accept_rejectResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="out_accept_rejectResult" nillable="true" type="s0:AcceptRejectResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="out_cancel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="taxpayer_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cer" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="key" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="store_pending" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="out_cancel" type="tns:out_cancel" />
+      <xs:element name="out_accept_rejectResponse" type="tns:out_accept_rejectResponse" />
+      <xs:element name="accept_rejectResponse" type="tns:accept_rejectResponse" />
+      <xs:element name="query_pending_cancellationResponse" type="tns:query_pending_cancellationResponse" />
+      <xs:element name="query_pending_cancellation" type="tns:query_pending_cancellation" />
+      <xs:element name="accept_reject" type="tns:accept_reject" />
+      <xs:element name="stringArray" type="tns:stringArray" />
+      <xs:element name="get_receipt" type="tns:get_receipt" />
+      <xs:element name="cancel" type="tns:cancel" />
+      <xs:element name="get_out_relatedResponse" type="tns:get_out_relatedResponse" />
+      <xs:element name="out_accept_reject" type="tns:out_accept_reject" />
+      <xs:element name="cancel_signature" type="tns:cancel_signature" />
+      <xs:element name="get_sat_statusResponse" type="tns:get_sat_statusResponse" />
+      <xs:element name="get_out_sat_status" type="tns:get_out_sat_status" />
+      <xs:element name="get_out_pending" type="tns:get_out_pending" />
+      <xs:element name="get_pendingResponse" type="tns:get_pendingResponse" />
+      <xs:element name="get_related" type="tns:get_related" />
+      <xs:element name="get_receiptResponse" type="tns:get_receiptResponse" />
+      <xs:element name="get_out_related" type="tns:get_out_related" />
+      <xs:element name="sign_cancelResponse" type="tns:sign_cancelResponse" />
+      <xs:element name="cancelResponse" type="tns:cancelResponse" />
+      <xs:element name="get_out_pendingResponse" type="tns:get_out_pendingResponse" />
+      <xs:element name="out_cancelResponse" type="tns:out_cancelResponse" />
+      <xs:element name="get_relatedResponse" type="tns:get_relatedResponse" />
+      <xs:element name="get_sat_status" type="tns:get_sat_status" />
+      <xs:element name="get_out_sat_statusResponse" type="tns:get_out_sat_statusResponse" />
+      <xs:element name="cancel_signatureResponse" type="tns:cancel_signatureResponse" />
+      <xs:element name="sign_cancel" type="tns:sign_cancel" />
+      <xs:element name="get_pending" type="tns:get_pending" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="cancel_signature">
+    <wsdl:part name="cancel_signature" element="tns:cancel_signature" />
+  </wsdl:message>
+  <wsdl:message name="cancel_signatureResponse">
+    <wsdl:part name="cancel_signatureResponse" element="tns:cancel_signatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_out_sat_status">
+    <wsdl:part name="get_out_sat_status" element="tns:get_out_sat_status" />
+  </wsdl:message>
+  <wsdl:message name="get_out_sat_statusResponse">
+    <wsdl:part name="get_out_sat_statusResponse" element="tns:get_out_sat_statusResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_out_pending">
+    <wsdl:part name="get_out_pending" element="tns:get_out_pending" />
+  </wsdl:message>
+  <wsdl:message name="get_out_pendingResponse">
+    <wsdl:part name="get_out_pendingResponse" element="tns:get_out_pendingResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_pending">
+    <wsdl:part name="get_pending" element="tns:get_pending" />
+  </wsdl:message>
+  <wsdl:message name="get_pendingResponse">
+    <wsdl:part name="get_pendingResponse" element="tns:get_pendingResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_sat_status">
+    <wsdl:part name="get_sat_status" element="tns:get_sat_status" />
+  </wsdl:message>
+  <wsdl:message name="get_sat_statusResponse">
+    <wsdl:part name="get_sat_statusResponse" element="tns:get_sat_statusResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_related">
+    <wsdl:part name="get_related" element="tns:get_related" />
+  </wsdl:message>
+  <wsdl:message name="get_relatedResponse">
+    <wsdl:part name="get_relatedResponse" element="tns:get_relatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="query_pending_cancellation">
+    <wsdl:part name="query_pending_cancellation" element="tns:query_pending_cancellation" />
+  </wsdl:message>
+  <wsdl:message name="query_pending_cancellationResponse">
+    <wsdl:part name="query_pending_cancellationResponse" element="tns:query_pending_cancellationResponse" />
+  </wsdl:message>
+  <wsdl:message name="sign_cancel">
+    <wsdl:part name="sign_cancel" element="tns:sign_cancel" />
+  </wsdl:message>
+  <wsdl:message name="sign_cancelResponse">
+    <wsdl:part name="sign_cancelResponse" element="tns:sign_cancelResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_receipt">
+    <wsdl:part name="get_receipt" element="tns:get_receipt" />
+  </wsdl:message>
+  <wsdl:message name="get_receiptResponse">
+    <wsdl:part name="get_receiptResponse" element="tns:get_receiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancel">
+    <wsdl:part name="cancel" element="tns:cancel" />
+  </wsdl:message>
+  <wsdl:message name="cancelResponse">
+    <wsdl:part name="cancelResponse" element="tns:cancelResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_out_related">
+    <wsdl:part name="get_out_related" element="tns:get_out_related" />
+  </wsdl:message>
+  <wsdl:message name="get_out_relatedResponse">
+    <wsdl:part name="get_out_relatedResponse" element="tns:get_out_relatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="out_cancel">
+    <wsdl:part name="out_cancel" element="tns:out_cancel" />
+  </wsdl:message>
+  <wsdl:message name="out_cancelResponse">
+    <wsdl:part name="out_cancelResponse" element="tns:out_cancelResponse" />
+  </wsdl:message>
+  <wsdl:message name="out_accept_reject">
+    <wsdl:part name="out_accept_reject" element="tns:out_accept_reject" />
+  </wsdl:message>
+  <wsdl:message name="out_accept_rejectResponse">
+    <wsdl:part name="out_accept_rejectResponse" element="tns:out_accept_rejectResponse" />
+  </wsdl:message>
+  <wsdl:message name="accept_reject">
+    <wsdl:part name="accept_reject" element="tns:accept_reject" />
+  </wsdl:message>
+  <wsdl:message name="accept_rejectResponse">
+    <wsdl:part name="accept_rejectResponse" element="tns:accept_rejectResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Application">
+    <wsdl:operation name="cancel_signature" parameterOrder="cancel_signature">
+      <wsdl:documentation>This method cancels a CFDI by the given enveloped signature</wsdl:documentation>
+      <wsdl:input name="cancel_signature" message="tns:cancel_signature" />
+      <wsdl:output name="cancel_signatureResponse" message="tns:cancel_signatureResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="get_out_sat_status" parameterOrder="get_out_sat_status">
+      <wsdl:documentation>This method returns the sat receipt (response) of the cancellation webservice</wsdl:documentation>
+      <wsdl:input name="get_out_sat_status" message="tns:get_out_sat_status" />
+      <wsdl:output name="get_out_sat_statusResponse" message="tns:get_out_sat_statusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="get_out_pending" parameterOrder="get_out_pending">
+      <wsdl:documentation>This method returns the sat receipt (response) of the cancellation webservice</wsdl:documentation>
+      <wsdl:input name="get_out_pending" message="tns:get_out_pending" />
+      <wsdl:output name="get_out_pendingResponse" message="tns:get_out_pendingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="get_pending" parameterOrder="get_pending">
+      <wsdl:documentation>This method returns the sat receipt (response) of the cancellation webservice</wsdl:documentation>
+      <wsdl:input name="get_pending" message="tns:get_pending" />
+      <wsdl:output name="get_pendingResponse" message="tns:get_pendingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="get_sat_status" parameterOrder="get_sat_status">
+      <wsdl:documentation>This method returns the sat receipt (response) of the cancellation webservice</wsdl:documentation>
+      <wsdl:input name="get_sat_status" message="tns:get_sat_status" />
+      <wsdl:output name="get_sat_statusResponse" message="tns:get_sat_statusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="get_related" parameterOrder="get_related">
+      <wsdl:documentation>This method returns the sat receipt (response) of the cancellation webservice</wsdl:documentation>
+      <wsdl:input name="get_related" message="tns:get_related" />
+      <wsdl:output name="get_relatedResponse" message="tns:get_relatedResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="query_pending_cancellation" parameterOrder="query_pending_cancellation">
+      <wsdl:documentation>This method returns the status of a peding buffer invoice by using an uuid</wsdl:documentation>
+      <wsdl:input name="query_pending_cancellation" message="tns:query_pending_cancellation" />
+      <wsdl:output name="query_pending_cancellationResponse" message="tns:query_pending_cancellationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sign_cancel" parameterOrder="sign_cancel">
+      <wsdl:documentation>This method returns a session id for work with the webservices</wsdl:documentation>
+      <wsdl:input name="sign_cancel" message="tns:sign_cancel" />
+      <wsdl:output name="sign_cancelResponse" message="tns:sign_cancelResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="get_receipt" parameterOrder="get_receipt">
+      <wsdl:documentation>This method returns the sat receipt (response) of the cancellation webservice</wsdl:documentation>
+      <wsdl:input name="get_receipt" message="tns:get_receipt" />
+      <wsdl:output name="get_receiptResponse" message="tns:get_receiptResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cancel" parameterOrder="cancel">
+      <wsdl:documentation>This method returns a session id for work with the webservices</wsdl:documentation>
+      <wsdl:input name="cancel" message="tns:cancel" />
+      <wsdl:output name="cancelResponse" message="tns:cancelResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="get_out_related" parameterOrder="get_out_related">
+      <wsdl:documentation>This method returns the sat receipt (response) of the cancellation webservice</wsdl:documentation>
+      <wsdl:input name="get_out_related" message="tns:get_out_related" />
+      <wsdl:output name="get_out_relatedResponse" message="tns:get_out_relatedResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="out_cancel" parameterOrder="out_cancel">
+      <wsdl:input name="out_cancel" message="tns:out_cancel" />
+      <wsdl:output name="out_cancelResponse" message="tns:out_cancelResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="out_accept_reject" parameterOrder="out_accept_reject">
+      <wsdl:input name="out_accept_reject" message="tns:out_accept_reject" />
+      <wsdl:output name="out_accept_rejectResponse" message="tns:out_accept_rejectResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="accept_reject" parameterOrder="accept_reject">
+      <wsdl:input name="accept_reject" message="tns:accept_reject" />
+      <wsdl:output name="accept_rejectResponse" message="tns:accept_rejectResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Application" type="tns:Application">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="cancel_signature">
+      <soap:operation soapAction="cancel_signature" style="document" />
+      <wsdl:input name="cancel_signature">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="cancel_signatureResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_out_sat_status">
+      <soap:operation soapAction="get_out_sat_status" style="document" />
+      <wsdl:input name="get_out_sat_status">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="get_out_sat_statusResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_out_pending">
+      <soap:operation soapAction="get_out_pending" style="document" />
+      <wsdl:input name="get_out_pending">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="get_out_pendingResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_pending">
+      <soap:operation soapAction="get_pending" style="document" />
+      <wsdl:input name="get_pending">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="get_pendingResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_sat_status">
+      <soap:operation soapAction="get_sat_status" style="document" />
+      <wsdl:input name="get_sat_status">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="get_sat_statusResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_related">
+      <soap:operation soapAction="get_related" style="document" />
+      <wsdl:input name="get_related">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="get_relatedResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="query_pending_cancellation">
+      <soap:operation soapAction="query_pending_cancellation" style="document" />
+      <wsdl:input name="query_pending_cancellation">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="query_pending_cancellationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sign_cancel">
+      <soap:operation soapAction="sign_cancel" style="document" />
+      <wsdl:input name="sign_cancel">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sign_cancelResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_receipt">
+      <soap:operation soapAction="get_receipt" style="document" />
+      <wsdl:input name="get_receipt">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="get_receiptResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancel">
+      <soap:operation soapAction="cancel" style="document" />
+      <wsdl:input name="cancel">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="cancelResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_out_related">
+      <soap:operation soapAction="get_out_related" style="document" />
+      <wsdl:input name="get_out_related">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="get_out_relatedResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="out_cancel">
+      <soap:operation soapAction="out_cancel" style="document" />
+      <wsdl:input name="out_cancel">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="out_cancelResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="out_accept_reject">
+      <soap:operation soapAction="out_accept_reject" style="document" />
+      <wsdl:input name="out_accept_reject">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="out_accept_rejectResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accept_reject">
+      <soap:operation soapAction="accept_reject" style="document" />
+      <wsdl:input name="accept_reject">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="accept_rejectResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CancelSOAP">
+    <wsdl:port name="Application" binding="tns:Application">
+      <soap:address location="https://facturacion.finkok.com/servicios/soap/cancel" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
